@@ -3,8 +3,8 @@ angular.module('basic.controllers', ['basic.services'])
 	$scope,
 	Test,
 	RandomNumber,
-	User
-) {
+    RandomElement
+    ) {
 
 	$scope.min = 0;
 	$scope.max = 10;
@@ -30,23 +30,16 @@ angular.module('basic.controllers', ['basic.services'])
 			console.log(RandomNumber(parseFloat($scope.min), parseFloat($scope.max), true));
 		}
 	};
-
-	// $scope.testGeneratePassword = function() {
-	// 	for(var i=0; i<10; i++) {
-	// 		console.log(GeneratePassword(16));
-	// 	}
-	// };
-
-	var u = new User();
-	console.log(u);
-
-	$scope.testUser = function() {
-		var passwordValid = u.checkPassword($scope.password);
-		if(passwordValid) {
-			alert('Password was correct');
-		}
-		else {
-			alert('Password was incorrect');
-		}
-	};
+    
+	 $scope.testRandElement = function() {
+         $scope.randomArray = [1,2,3,4,5,6,7,8,9,44
+                               ,77,88,666,666,666,495];
+	 	for(var i=0; i<10; i++) {
+	 		console.log("Random element: " + RandomElement($scope.randomArray));
+	 	}
+	 };
+    
+    $scope.randElement = function(){
+        
+    }
 });

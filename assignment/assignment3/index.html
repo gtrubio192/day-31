@@ -6,15 +6,67 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
     </head>
     <body>
         <div ng-controller="BasicCtrl">
-            <input type="number" ng-model="min">
-            <input type="text" ng-model="max">
-            <button ng-click="testRandomNumber()">RandomNumber</button>
-			 <button ng-click="testRandElement()">Random Array Element</button> 
+            <div id="randomNums">
+                <input type="number" ng-model="min">
+                <input type="text" ng-model="max">
+                <button class="btn" ng-click="testRandomNumber()">RandomNumber</button>
+            </div>
+            <hr>
+            <div id="randomArrayElement">
+                <button class="btn" ng-click="testRandElement()">
+                    Random Array Element
+                </button>
+            </div>
+            <hr>
+            <div id="rotThirteen">
+                <input ng-model="toBeEncrypted" type="text" placeholder="Word to be encrypted...">
+                <button class="btn" ng-click="testRot13()">Encrypt Message!</button>
+                <div>
+                    <button class="btn" ng-click="show = true">Click to show encrypted message!</button>
+                    <p ng-show="show">{{hiddenMessage}}</p>
+                </div>
+            </div>
+            <hr>
+            <div id="studentPairs">
+                <p>Random students to be paired:</p>
+                <p>[Mayer, John, Duncan, Hugh, Alex, Travis,</p>
+                <p>
+                    Ryan, Erika, Charlie, Paul, Daniel, Burke]
+                </p>
+                <p>
+                   <button class='btn' ng-click="studentPairs()">Pair 'em up!</button>
+                </p>
+                <p>{{pairs}}</p>
+            </div>
+            <hr>
+            <div id="dashes">
+                <input ng-model="toDash"type="text" placeholder="Put text here...">
+                <button ng-click="stringDashes(toDash); toDash='' " class="btn">Click me to insert dashes (using .splice())</button>
+                <button ng-click="dashesNoSplitJoin(toDash);  toDash=''"class="btn">Click me to insert dashes (NO .splice())</button>
+                <p>No splice: {{dashesNoSplitJoinResult}} </p>
+                <p>Splic-a-licin': {{stringDashesResult}}</p>
+            </div>
+            <hr>
+            <div>
+            
+            </div>
+            <hr>
+            <div>
+            
+            </div>
+<!--
+            <div ng-repeat="elements in randomElements">
+                {{elements}}
+            </div>
+-->
 		</div>
-
+        <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
         <script type="text/javascript" src="scripts/services.js"></script>
         <script type="text/javascript" src="scripts/controllers.js"></script>

@@ -7,7 +7,8 @@ angular.module('basic.controllers', ['basic.services'])
     RotThirteen,
     StudentPairs,
     StringDashes,
-    DashesNoSplitJoin
+    DashesNoSplitJoin,
+    ConcatDash
     ) {
 
 	$scope.min = 0;
@@ -62,5 +63,10 @@ angular.module('basic.controllers', ['basic.services'])
     
     $scope.stringDashes = function(toDash){
         $scope.stringDashesResult = StringDashes(toDash)
+    }
+    
+    $scope.concatDash = function(str1, str2)
+    {
+        $scope.dashedStrings = ConcatDash(str1, str2);
     }
 });

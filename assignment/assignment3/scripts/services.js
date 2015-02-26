@@ -190,9 +190,15 @@ angular.module('basic.services', [])
 
 })
 //Create a function that takes two string strings and returns a string with a dash (-) in between each character without using .split or .join.
-.factory('Bar', function() {
-    return function(){
-        
+.factory('ConcatDash', function(DashesNoSplitJoin) {
+    return function(str1, str2){
+        if(!str1 || !str2)
+            alert("Whoa! Must enter in both text boxes before you can pass, pal");
+        else{  
+            var dashes = str1 + str2;
+            dashes = DashesNoSplitJoin(dashes);
+        }
+	   return dashes;
     }
 })
 //Use $('selector').val() and $('selector').click() to re-create your number guessing game without using window.prompt. Use Bootstrap to build the page.
@@ -203,7 +209,6 @@ angular.module('basic.services', [])
 .factory('Bar', function() {
 
 });
-
 
 //.factory('GeneratePassword', function(RandomNumber) {
 //	return function(length) {

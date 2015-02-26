@@ -52,8 +52,18 @@
                 <p>Splic-a-licin': {{stringDashesResult}}</p>
             </div>
             <hr>
-            <div>
-            
+            <div id="stringDashes">
+                <p>Enter two strings and send off to have some AWESOME dashes 
+                    inserted between the letters. <br>
+                    Trust me, you'll thank me later.
+                </p>
+                <form novalidate ng-submit="concatDash(str1,str2)">
+                    <input require ng-model="str1"type="text" placeholder="Put text here...">
+                    <input require ng-model="str2"type="text" placeholder="Put text here...">
+                    <input class="btn btn-lg btn-inverse" type="submit" value=" Add a lil dash">
+
+                </form>
+                <p>{{dashedStrings}}</p>
             </div>
             <hr>
             <div>
